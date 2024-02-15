@@ -1,0 +1,18 @@
+#N canvas 234 234 450 300 12;
+#X obj 61 31 adc~;
+#X obj 61 55 sigmund~ -stabletime 40 notes env;
+#X floatatom 61 79 5 0 0 0 - - - 0;
+#X floatatom 298 109 5 0 0 0 - - - 0;
+#X obj 61 102 expr int (0.5 + $f1);
+#X floatatom 20 143 5 0 0 0 - - - 0;
+#X obj 157 185 poly 1 1;
+#X obj 188 223 noteout 1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 6 1;
+#X connect 4 0 5 0;
+#X connect 4 0 6 0;
+#X connect 6 1 7 0;
+#X connect 6 2 7 1;
