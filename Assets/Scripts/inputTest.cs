@@ -5,19 +5,14 @@ using UnityEngine.InputSystem;
 
 public class inputTest : MonoBehaviour
 {
-    [SerializeField] InputAction _action = null;
+    [SerializeField] InputAction growAction = null;
+    [SerializeField] InputAction shrinkAction = null;
     [SerializeField] GameObject _shape = null;
 
     void OnEnable()
     {
-        _action.performed += OnPerformed;
-        _action.Enable();
-    }
-
-    void OnDisable()
-    {
-        _action.performed -= OnPerformed;
-        _action.Disable();
+        growAction.performed += OnPerformed;
+        growAction.Enable();
     }
 
     void OnPerformed(InputAction.CallbackContext ctx)
