@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class inputTest : MonoBehaviour
 {
     [SerializeField] InputAction growAction = null;
-    [SerializeField] InputAction shrinkAction = null;
     [SerializeField] GameObject _shape = null;
 
     void OnEnable()

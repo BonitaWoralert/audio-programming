@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "TestAction",
+                    "name": "playedC",
                     "type": "Button",
                     "id": "145e886a-bbe4-45c5-abc8-19be44ba94d5",
                     "expectedControlType": "Button",
@@ -266,11 +266,55 @@
                 {
                     "name": "",
                     "id": "002e0a9f-3f63-4e92-af95-eb7af497a143",
-                    "path": "<MidiDevice>/note040",
+                    "path": "<MidiDevice>/note012",
                     "interactions": "",
                     "processors": "",
                     "groups": "MIDI Device",
-                    "action": "TestAction",
+                    "action": "playedC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7c7c28d8-df6b-4bd1-802f-295b1e5c58ea",
+                    "path": "<MidiDevice>/note024",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MIDI Device",
+                    "action": "playedC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d139d709-3648-4c35-a386-9e96a1eb4fd9",
+                    "path": "<MidiDevice>/note036",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "playedC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4412032b-d200-4678-b826-c2c474850d7a",
+                    "path": "<MidiDevice>/note048",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "playedC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "621ce21e-e2f3-43c5-b06b-d98a26388c10",
+                    "path": "<MidiDevice>/note060",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "playedC",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

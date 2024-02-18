@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Layouts;
@@ -5,8 +6,11 @@ using UnityEngine.InputSystem.Layouts;
 // NoteCallback.cs - This script shows how to define a callback to get notified
 // on MIDI note-on/off events.
 
-sealed class NoteCallback : MonoBehaviour
+class NoteCallback : MonoBehaviour
 {
+    [SerializeField]GameObject shape = null;
+    [SerializeField] GameObject text = null;
+
     void Start()
     {
         InputSystem.onDeviceChange += (device, change) =>
@@ -17,30 +21,49 @@ sealed class NoteCallback : MonoBehaviour
             if (midiDevice == null) return;
 
             midiDevice.onWillNoteOn += (note, velocity) => {
-                // Note that you can't use note.velocity because the state
-                // hasn't been updated yet (as this is "will" event). The note
-                // object is only useful to specify the target note (note
-                // number, channel number, device name, etc.) Use the velocity
-                // argument as an input note velocity.
-                Debug.Log(string.Format(
-                    "Note On #{0} ({1}) vel:{2:0.00} ch:{3} dev:'{4}'",
-                    note.noteNumber,
-                    note.shortDisplayName,
-                    velocity,
-                    (note.device as Minis.MidiDevice)?.channel,
-                    note.device.description.product
-                ));
+                
+                ChangeColour(note.shortDisplayName);
             };
 
             midiDevice.onWillNoteOff += (note) => {
-                Debug.Log(string.Format(
-                    "Note Off #{0} ({1}) ch:{2} dev:'{3}'",
-                    note.noteNumber,
-                    note.shortDisplayName,
-                    (note.device as Minis.MidiDevice)?.channel,
-                    note.device.description.product
-                ));
+                //note is off? what to do now
             };
         };
+    }
+
+    void ChangeColour(string noteName)
+    {
+        char letterNote = noteName[0];
+        Debug.Log(letterNote);
+        Color color = Color.white;
+        switch (letterNote)
+        {
+            case 'C':
+                color = Color.blue;
+                break;
+            case 'D':
+                color = Color.green;
+                break;
+            case 'E':
+                color = Color.magenta;
+                break;
+            case 'F':
+                color = Color.yellow;
+                break;
+            case 'G':
+                color = Color.gray;
+                break;
+            case 'A':
+                color = Color.cyan;
+                break;
+            case 'B':
+                color = Color.red;
+                break;
+            default:
+                break;
+        }
+
+        shape.GetComponent<SpriteRenderer>().color = color;
+        text.GetComponent<TextMeshPro>().text = noteName;
     }
 }
