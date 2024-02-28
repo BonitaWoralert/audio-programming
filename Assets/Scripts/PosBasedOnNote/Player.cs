@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayANote : MonoBehaviour
 {
@@ -35,6 +36,12 @@ public class PlayANote : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(0, notePlayed-6);
+        transform.position = new Vector3(-10, notePlayed-6);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("collided");
+        Debug.Break();
     }
 }
