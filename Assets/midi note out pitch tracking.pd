@@ -1,5 +1,5 @@
 #N canvas 1099 342 697 519 12;
-#X obj 305 181 adc~;
+#X obj 329 166 adc~;
 #X obj 299 239 sigmund~ -stabletime 40 notes env;
 #X floatatom 299 263 5 0 0 0 - - - 0;
 #X floatatom 536 293 5 0 0 0 - - - 0;
@@ -10,7 +10,8 @@
 #X obj 267 146 osc~;
 #X floatatom 175 60 5 0 0 0 - - - 0;
 #X obj 176 98 mtof;
-#X floatatom 233 103 5 0 0 0 - - - 0;
+#X connect 0 0 1 0;
+#X connect 0 1 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
 #X connect 2 0 4 0;
@@ -19,7 +20,6 @@
 #X connect 4 0 6 0;
 #X connect 6 1 7 0;
 #X connect 6 2 7 1;
-#X connect 8 0 1 0;
 #X connect 9 0 10 0;
 #X connect 10 0 8 0;
 #X connect 10 0 8 1;

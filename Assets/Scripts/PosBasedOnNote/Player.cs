@@ -61,6 +61,6 @@ public class PlayANote : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("collided");
-        //Debug.Break();
+        Debug.Break();
     }
 }
