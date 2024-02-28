@@ -54,21 +54,18 @@ class QTE : MonoBehaviour
         text.GetComponent<TextMeshProUGUI>().text = ((Note)currentNote).ToString();
         //colour.GetComponent<SpriteRenderer>().color = Color.grey;
         timer = Time.time + timeOut;
-        Debug.Log("timer started");
     }
 
     private void Update()
     {
         if (Time.time > timer && timer != 0f)
         {
-            Debug.Log("times up");
             colour.GetComponent<SpriteRenderer>().color = Color.red;
             timer = 0f; //reset timer
             StartTimer(); //start timer again + pick new note
         }
         if(playedNote % 12 == currentNote)
         {
-            Debug.Log("woohoo");
             colour.GetComponent<SpriteRenderer>().color = Color.green;
             StartTimer(); //start timer again + pick new note
         }
