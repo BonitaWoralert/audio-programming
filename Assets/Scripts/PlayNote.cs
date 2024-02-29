@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Layouts;
+using System.Linq;
 
 class PlayNote : MonoBehaviour
 {
@@ -38,7 +39,10 @@ class PlayNote : MonoBehaviour
 
             midiDevice.onWillNoteOn += (note, velocity) => {
                 StartTimer(); //when note played, start timer
-                notesPlayed.Add(note.noteNumber);
+                if(notesPlayed.Count == 0)
+                    notesPlayed.Add(note.noteNumber);
+                else if(note.noteNumber!=notesPlayed.Last())
+                    notesPlayed.Add(note.noteNumber);
             };
 
             midiDevice.onWillNoteOff += (note) => {
@@ -60,14 +64,14 @@ class PlayNote : MonoBehaviour
     void StartTimer()
     {
         timer = Time.time + timeOut;
-        Debug.Log("timer started");
+        //Debug.Log("timer started");
     }
 
     private void Update()
     {
         if (Time.time > timer && timer != 0f)
         {
-            Debug.Log("times up");
+            //Debug.Log("times up");
             OutputPlayedNotes();
             if(IsCombo())
             {

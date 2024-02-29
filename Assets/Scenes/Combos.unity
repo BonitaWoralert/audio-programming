@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704e383e5fd3ff144bdc8389e4f20b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combo1: 2400000028000000
+  combo1: 4100000045000000480000004a00000047000000
   timeOut: 3
 --- !u!1 &908345844
 GameObject:
